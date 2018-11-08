@@ -64,6 +64,19 @@ valid_move(X,Y,Z):-
   retract(slot(X,1)),retract(slot(Y,1)),retract(slot(Z,0)),
   assert(slot(X,0)),assert(slot(Y,0)),assert(slot(Z,1)).
 
+test:-
+  reset_board,
+  writeln("=== 0 ==="),
+  go(0);nl,reset_board,
+  writeln("=== 1 ==="),
+  go(1);nl,reset_board,
+  writeln("=== 2 ==="),
+  go(2);nl,reset_board,
+  writeln("=== 3 ==="),
+  go(3);nl,reset_board,
+  writeln("=== 4 ==="),
+  go(4);nl,reset_board.
+
 go(X):-
   retract(slot(X,1)),
   assert(slot(X,0)),
